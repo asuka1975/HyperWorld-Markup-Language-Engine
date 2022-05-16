@@ -9,12 +9,15 @@ fn main() {
         .build();
 
     app.connect_activate(|app| {
+        let urlEntry = gtk::Entry::new();
         let win = ApplicationWindow::builder()
             .application(app)
             .default_width(800)
             .default_height(500)
             .title("HyperWorld-Markup-Language-Engine")
             .build();
+        win.add(&urlEntry);
+
         win.show_all();
     });
 
