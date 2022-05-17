@@ -8,7 +8,7 @@ set(CMAKE_CXX_FLAGS_DEBUG "-g3 -O0 -pg")
 set(CMAKE_CXX_FLAGS_RELEASE "-O2 -s -DNDEBUG -march=native")
 
 find_package(PkgConfig REQUIRED)
-pkg_check_modules(GTK3 REQUIRED gtk+-3.0)
+pkg_check_modules(GTK3 REQUIRED gtkmm-3.0)
 
 add_executable(HyperWorld_Markup_Language_Engine src/main.cpp)
 target_include_directories(HyperWorld_Markup_Language_Engine PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include ${GTK3_INCLUDE_DIRS})
