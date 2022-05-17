@@ -14,7 +14,9 @@ fn main() {
         let _hbox = gtk::Box::builder()
             .orientation(gtk::Orientation::Horizontal)
             .build();
-        let render_area = gtk::GLArea::new();
+        let render_area = gtk::GLArea::builder()
+            .width_request(800)
+            .build();
         _hbox.pack_start(&render_area, false, true, 0);
 
         let _vbox = gtk::Box::builder()
