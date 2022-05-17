@@ -1,5 +1,11 @@
 #include <iostream>
+#include <gtkmm.h>
+
+#include "ui/MainWindow.h"
 
 int main(int argc, char* argv[]) {
-    return 0;
+    auto app = Gtk::Application::create(argc, argv, "com.github.asuka1975.HyperWorld-Markup-Language-Engine");
+    hwml::ui::MainWindow win;
+
+    return app->run(win);
 }
