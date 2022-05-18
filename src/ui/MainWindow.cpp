@@ -5,7 +5,7 @@
 #include <ui/MainWindow.h>
 #include <iostream>
 
-void hwml::ui::MainWindow::on_realize() {
+void hwml_engine::ui::MainWindow::on_realize() {
     Widget::on_realize();
 
     set_title("HyperWorld-Markup-Language-Engine");
@@ -32,11 +32,11 @@ void hwml::ui::MainWindow::on_realize() {
     page_area.signal_render().connect(sigc::mem_fun(*this, &MainWindow::on_glarea_render), false);
 }
 
-void hwml::ui::MainWindow::on_url_determined(const Glib::ustring &url) {
+void hwml_engine::ui::MainWindow::on_url_determined(const Glib::ustring &url) {
     page_area.queue_draw();
 }
 
-void hwml::ui::MainWindow::on_glarea_realize() {
+void hwml_engine::ui::MainWindow::on_glarea_realize() {
     page_area.make_current();
     try {
         page_area.set_has_depth_buffer();
@@ -46,7 +46,7 @@ void hwml::ui::MainWindow::on_glarea_realize() {
     }
 }
 
-void hwml::ui::MainWindow::on_glarea_unrealize() {
+void hwml_engine::ui::MainWindow::on_glarea_unrealize() {
     page_area.make_current();
     try {
         page_area.throw_if_error();
@@ -55,7 +55,7 @@ void hwml::ui::MainWindow::on_glarea_unrealize() {
     }
 }
 
-bool hwml::ui::MainWindow::on_glarea_render(const Glib::RefPtr<Gdk::GLContext>& ctx) {
+bool hwml_engine::ui::MainWindow::on_glarea_render(const Glib::RefPtr<Gdk::GLContext>& ctx) {
     try {
         page_area.throw_if_error();
 

@@ -8,7 +8,7 @@
 #include <gtkmm.h>
 #include <gdkmm.h>
 
-namespace hwml::ui {
+namespace hwml_engine::ui {
     class MainWindow : public Gtk::Window {
     public:
         MainWindow() = default;
